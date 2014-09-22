@@ -1,0 +1,28 @@
+
+Config { font = "xft:Tamsyn:size=7:antialias=false"
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "#c80000"
+       , position = Top
+       , lowerOnStart = True
+       , pickBroadest = False
+       , allDesktops = True
+       , overrideRedirect = False
+       , persistent = False
+       , hideOnStart = False
+       , commands = [ Run MultiCpu ["-t","<fc=#880000>CPU:</fc> <fc=#c80000><total0>% <total1>%</fc>"] 30
+                    --, Run CoreTemp ["-t","<core>C"] 30
+                    , Run Memory ["-t","<fc=#880000>MEM:</fc> <usedratio>% <cache>M"] 30
+                    , Run BatteryP ["BAT0"] ["-t","<fc=#880000>BAT:</fc> <acstatus> <left>%"] 30
+                    , Run Wireless "wls1" ["-t","<fc=#880000>NET:</fc> <essid> <quality>%"] 30
+                    --, Run MPD  ["-t","<title><fc=#880000><state><lapsed></fc>"] 30 -- need haskel-libmpd
+                    --, Run DateZone "%d %H:%M" "en_US.UTF-8" "America/New_York" "ustime" 30
+                    , Run Date "<fc=#880000>%Vw</fc> %a %b %d  %H:%M" "date" 30
+                    , Run StdinReader
+                    , Run CommandReader "/home/yang/dev/pymodoro/pymodoro.py" "pymodoro"
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% | %pymodoro%}{%multicpu% %memory% %battery% %wls1wi% %date%"
+       }
