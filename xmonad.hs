@@ -121,8 +121,6 @@ myKeys = \c -> mkKeymap c $
  , ("M-c", namedScratchpadAction myScratchPads "camera")
  , ("M-'", namedScratchpadAction myScratchPads "terminal")
  , ("M-d", namedScratchpadAction myScratchPads "stardict")
---  , ("M-v", namedScratchpadAction myScratchPads "mplayer" >> windows W.focusDown 
---                                                          >> spawn "transset-df -n 'MPlayer' .6")
  , ("M-v", spawn "xvkbd -compact -no-repeat -minimizable")
  , ("M-S-v", spawn "killall xvkbd")
 
@@ -203,7 +201,6 @@ myManageHook = (composeAll . concat $
 myScratchPads = [  NS   "terminal"   spawnTerm  findTerm  manageTerm
                 ,  NS   "camera"     spawnCam   findCam   manageCam
                 ,  NS   "stardict"   spawnSD    findSD    manageSD
-                ,  NS   "mplayer"    spawnMV    findMV    manageMV
                 ]
     where
  spawnTerm  = myTerminal     ++ " -name scratchpad"
@@ -222,14 +219,6 @@ myScratchPads = [  NS   "terminal"   spawnTerm  findTerm  manageTerm
         w = 2/3
         t = 1/6
         l = 1/6
- spawnMV  = "sh /home/ryan/local/scripts/playmv.sh"
- findMV   = className      =? "MPlayer"
- manageMV = customFloating $  W.RationalRect l t w h
-    where
-        h = 0.4
-        w = 0.39
-        t = 0.63
-        l = 1-w
  spawnCam  = "sudo mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot -geometry 128x80+576+720 -name 'webcamera'"
  findCam   = title          =? "camera"
  manageCam = customFloating $  W.RationalRect l t w h
