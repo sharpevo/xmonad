@@ -182,6 +182,7 @@ myManageHook = (composeAll . concat $
   , [className =? c --> doCenterFloat    |  c    <- myCFloat   ]
   , [className =? c --> doShift "WEB"    |  c    <- myWEBClass ]
   , [className =? c --> doShift "DOC"    |  c    <- myDOCClass ]
+  , [className =? c --> doShift "MSG"    |  c    <- myMSGClass ]
   , [className =? c --> doShift "ETC"    |  c    <- myETCClass ]
   ]) <+> manageDocks <+> manageScratchPads 
   where
@@ -190,6 +191,7 @@ myManageHook = (composeAll . concat $
     myCFloat      = ["Xmessage","Save As...","XFontSel", "Main.py" ]
     myWEBClass    = ["Chromium","Firefox"                          ]
     myDOCClass    = ["Evince","Xpdf","Zathura","Xournal"           ]
+    myMSGClass    = ["tufts-vue-VUE","Geary"                       ]
     myETCClass    = ["Wine"                                        ]
 
 
