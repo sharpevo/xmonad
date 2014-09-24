@@ -185,7 +185,6 @@ myManageHook = (composeAll . concat $
   , [className =? c --> doShift "ETC"    |  c    <- myETCClass ]
   ]) <+> manageDocks <+> manageScratchPads 
   where
-    name = stringProperty "WM_NAME"
     myIgnore      = ["desktop","desktop_window","webcamera"        ]
     myFloat       = ["Zenity","Zim","XVkbd"                        ]
     myCFloat      = ["Xmessage","Save As...","XFontSel", "Main.py" ]
