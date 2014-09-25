@@ -188,7 +188,7 @@ myManageHook = (composeAll . concat $
     myFloat       = ["Zenity","Zim","XVkbd"                        ]
     myCFloat      = ["Xmessage","Save As...","XFontSel", "Main.py" ]
     myWEBClass    = ["Chromium","Firefox"                          ]
-    myDOCClass    = ["Evince","Xpdf","Zathura","Xournal"           ]
+    myDOCClass    = ["Evince","Xpdf","Zathura","Xournal","Okular"  ]
     myMSGClass    = ["tufts-vue-VUE","Geary"                       ]
     myETCClass    = ["Wine"                                        ]
 
