@@ -121,8 +121,6 @@ myKeys = \c -> mkKeymap c $
  , ("M-c", namedScratchpadAction myScratchPads "camera")
  , ("M-'", namedScratchpadAction myScratchPads "terminal")
  , ("M-d", namedScratchpadAction myScratchPads "stardict")
- , ("M-v", spawn "xvkbd -compact -no-repeat -minimizable")
- , ("M-S-v", spawn "killall xvkbd")
 
 -- quit & restart
  , ("M-q", spawn "/etc/X11/xinit/xmonad/restart_xmonad.sh")
