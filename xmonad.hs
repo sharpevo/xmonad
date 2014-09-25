@@ -104,6 +104,8 @@ myKeys = \c -> mkKeymap c $
  ,  ("<XF86AudioMute>",         spawn "amixer set Master toggle")
  ,  ("<XF86AudioLowerVolume>",  spawn "amixer set Master 5%-")
  ,  ("<XF86AudioRaiseVolume>",  spawn "amixer set Master 5%+")
+ ,  ("M-v",                     spawn "amixer set Master 5%-")
+ ,  ("M-S-v",                   spawn "amixer set Master 5%+")
  ,  ("<XF86HomePage>",          spawn "xmodmap ~/.Xmodmap")
  ,  ("<XF86Sleep>",        spawn "systemctl suspend")
  ,  ("<XF86ScreenSaver>",  spawn "/etc/X11/xinit/xmonad/xlock.sh")
@@ -121,8 +123,6 @@ myKeys = \c -> mkKeymap c $
  , ("M-c", namedScratchpadAction myScratchPads "camera")
  , ("M-'", namedScratchpadAction myScratchPads "terminal")
  , ("M-d", namedScratchpadAction myScratchPads "stardict")
- , ("M-v", spawn "xvkbd -compact -no-repeat -minimizable")
- , ("M-S-v", spawn "killall xvkbd")
 
 -- quit & restart
  , ("M-q", spawn "/etc/X11/xinit/xmonad/restart_xmonad.sh")
