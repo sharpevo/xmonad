@@ -1,4 +1,5 @@
-#!/bin/sh
-killall xmobar
+#!/bin/bash
+
 sh /etc/X11/xinit/xmonad/set_wallpaper.sh
-xmonad --restart
+exec xmonad
+
