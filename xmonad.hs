@@ -178,6 +178,7 @@ myManageHook = (composeAll . concat $
   [ [resource  =? r --> doIgnore         |  r    <- myIgnore   ]
   , [className =? c --> doFloat          |  c    <- myFloat    ]
   , [className =? c --> doCenterFloat    |  c    <- myCFloat   ]
+  , [className =? c --> doShift "LOG"    |  c    <- myLOGClass ]
   , [className =? c --> doShift "WEB"    |  c    <- myWEBClass ]
   , [className =? c --> doShift "DOC"    |  c    <- myDOCClass ]
   , [className =? c --> doShift "MSG"    |  c    <- myMSGClass ]
@@ -185,8 +186,9 @@ myManageHook = (composeAll . concat $
   ]) <+> manageDocks <+> manageScratchPads 
   where
     myIgnore      = ["desktop","desktop_window","webcamera"        ]
-    myFloat       = ["Zenity","Zim","XVkbd"                        ]
+    myFloat       = ["Zenity","XVkbd"                              ]
     myCFloat      = ["Xmessage","Save As...","XFontSel", "Main.py" ]
+    myLOGClass    = ["Zim"                                         ]
     myWEBClass    = ["Chromium","Firefox"                          ]
     myDOCClass    = ["Evince","Xpdf","Zathura","Xournal","Okular"  ]
     myMSGClass    = ["tufts-vue-VUE","Geary"                       ]
