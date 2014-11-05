@@ -67,6 +67,7 @@ myKeys = \c -> mkKeymap c $
  ,  ("M-S-<Space>",  setLayout   $ XMonad.layoutHook c)
  ,  ("M-x f",        sendMessage $ JumpToLayout "full")
  ,  ("M-x t",        sendMessage $ JumpToLayout "tiled")
+ ,  ("M-x v",        sendMessage $ JumpToLayout "tiled_vertical")
  ,  ("M-x c",        sendMessage $ JumpToLayout "circle")
  ,  ("M-x m",        sendMessage $ JumpToLayout "threecolmid")
  ,  ("M-x g",        sendMessage $ JumpToLayout "Grid")
@@ -255,6 +256,7 @@ myPP = defaultPP { ppHidden          = xmobarColor "#880000" "" . noScratchPad
 
 myLayoutHook = avoidStruts $ (  renamed [Replace "full"] full 
                             ||| renamed [Replace "tiled"] tiled 
+                            ||| renamed [Replace "tiled_vertical"] tiled_vertical
                             ||| renamed [Replace "circle"] circle 
                             ||| renamed [Replace "threecolmid"] threecolmid 
                             ||| Grid
@@ -263,6 +265,7 @@ myLayoutHook = avoidStruts $ (  renamed [Replace "full"] full
    where
         full            = noBorders Full
         tiled           = spacing 4 $ smartBorders (ResizableTall 1 (2/100) (1/2) [])
+        tiled_vertical  = smartBorders (ResizableTall 3 (2/100) (1/2) [])
         magnify'        = magnifiercz' 2.2
         circle          = magnify' Circle
         threecolmid     = ThreeColMid 1 (2/100) (1/3)
