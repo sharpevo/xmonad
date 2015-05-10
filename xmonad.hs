@@ -218,10 +218,10 @@ myScratchPads = [  NS   "terminal"   spawnTerm  findTerm  manageTerm
  findSD   = className          =? "Goldendict"
  manageSD = customFloating $  W.RationalRect l t w h
     where
-        h = 2/3
-        w = 2/3
-        t = 1/6
-        l = 1/6
+        h = 0.4
+        w = 0.5
+        t = 0
+        l = 0
  spawnCam  = "sudo mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot -geometry 128x80+576+720 -name 'webcamera'"
  findCam   = title          =? "camera"
  manageCam = customFloating $  W.RationalRect l t w h
