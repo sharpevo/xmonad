@@ -120,7 +120,7 @@ myKeys = \c -> mkKeymap c $
  , ("M-t", spawn $ XMonad.terminal c )
  , ("M-p", spawn "touch ~/.pomodoro_session")
  , ("M-S-p", spawn "rm ~/.pomodoro_session")
- , ("M-o", spawn "transset-df --dec .4 -at")
+ , ("M-o", spawn "transset-df --dec .2 -at")
  , ("M-c", namedScratchpadAction myScratchPads "camera")
  , ("M-'", namedScratchpadAction myScratchPads "terminal")
  , ("M-d", namedScratchpadAction myScratchPads "stardict")
