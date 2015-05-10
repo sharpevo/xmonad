@@ -123,7 +123,7 @@ myKeys = \c -> mkKeymap c $
  , ("M-o", spawn "transset-df --dec .2 -at")
  , ("M-c", namedScratchpadAction myScratchPads "camera")
  , ("M-'", namedScratchpadAction myScratchPads "terminal")
- , ("M-d", namedScratchpadAction myScratchPads "stardict")
+ , ("M-d", namedScratchpadAction myScratchPads "goldendict")
 
 -- quit & restart
  , ("M-q", spawn "/etc/X11/xinit/xmonad/restart_xmonad.sh")
@@ -203,7 +203,7 @@ myManageHook = (composeAll . concat $
     manageScratchPads = namedScratchpadManageHook myScratchPads
 myScratchPads = [  NS   "terminal"   spawnTerm  findTerm  manageTerm
                 ,  NS   "camera"     spawnCam   findCam   manageCam
-                ,  NS   "stardict"   spawnSD    findSD    manageSD
+                ,  NS   "goldendict"   spawnSD    findSD    manageSD
                 ]
     where
  spawnTerm  = myTerminal     ++ " -name scratchpad"
@@ -214,8 +214,8 @@ myScratchPads = [  NS   "terminal"   spawnTerm  findTerm  manageTerm
         w = 0.5
         t = 0     
         l = 1 - w
- spawnSD  = "stardict"
- findSD   = className          =? "Stardict"
+ spawnSD  = "goldendict"
+ findSD   = className          =? "Goldendict"
  manageSD = customFloating $  W.RationalRect l t w h
     where
         h = 2/3
