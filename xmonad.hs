@@ -193,7 +193,7 @@ myManageHook = (composeAll . concat $
     myWEBClass    = ["Chromium","Firefox"                          ]
     myDOCClass    = ["Evince","Xpdf","Zathura","Xournal","Okular"  ]
     myMSGClass    = ["tufts-vue-VUE","Geary"                       ]
-    myETCClass    = ["Wine","libprs500"                            ]
+    myETCClass    = ["Wine","libprs500","Astrill"                  ]
 
 
 
