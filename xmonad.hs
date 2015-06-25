@@ -187,7 +187,7 @@ myManageHook = (composeAll . concat $
   ]) <+> manageDocks <+> manageScratchPads 
   where
     myIgnore      = ["desktop","desktop_window","webcamera"        ]
-    myFloat       = ["Zenity","XVkbd","Wine","Astrill"             ]
+    myFloat       = ["Zenity","XVkbd","Wine"                       ]
     myCFloat      = ["Xmessage","Save As...","XFontSel", "Main.py" ]
     myLOGClass    = ["Zim"                                         ]
     myWEBClass    = ["Chromium","Firefox"                          ]
