@@ -136,7 +136,7 @@ myKeys = \c -> mkKeymap c $
     -- mod-shift-N, Move client to workspace N
     -- mod-ctrl-N,  Switch to workspace N on other screen
     [ (m ++ "M-" ++ [k], f i)
-        | (i, k) <- zip (XMonad.workspaces c) "1234567890-=[]\\"
+        | (i, k) <- zip (XMonad.workspaces c) "()}+{][\\"
         , (f, m) <- [ (windows . W.view, "")
                     , (windows . W.shift, "S-")
                     , (\ws -> nextScreen >> (windows . W.view $ ws), "C-")
